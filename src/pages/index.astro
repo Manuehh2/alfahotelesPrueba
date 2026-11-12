@@ -1,0 +1,75 @@
+---
+import '../styles/global.css';
+
+const hotels = [
+  { name: 'Casa Loreto 1893', location: 'Barrio de Santiago · Mérida', description: 'Una casa de 1893 restaurada para vivir Mérida desde el centro de su memoria.', image: 'https://img1.wsimg.com/isteam/ip/33351b08-7efe-48ac-882f-66f26701bf10/CasaLoreto-3.jpg/:/rs=w:1200,h:1500,cg:true,m/cr=w:1200,h:1500,a:cc', link: 'https://casaloreto1893.com/' },
+  { name: 'Casa Tavera', location: 'Paseo de Montejo · Mérida', description: 'Siete habitaciones para caminar la ciudad sin prisa y volver a descansar.', image: 'https://img1.wsimg.com/isteam/ip/33351b08-7efe-48ac-882f-66f26701bf10/CA62_marzo--2.jpg/:/rs=w:1200,h:1500,cg:true,m/cr=w:1200,h:1500,a:cc', link: 'https://casatavera.com/' },
+  { name: 'Hotel Serenata Santa Lucía', location: 'Santa Lucía · Mérida', description: 'Un lugar para familias, grupos y largas estancias frente a la música de Mérida.', image: 'https://img1.wsimg.com/isteam/ip/33351b08-7efe-48ac-882f-66f26701bf10/Copia%20de%20CA%2062_junio-4.jpg/:/rs=w:1200,h:1500,cg:true,m/cr=w:1200,h:1500,a:cc', link: 'https://direct-book.com/properties/diezdiezcollectiondirect' },
+  { name: 'Casa Amate 62', location: 'Centro · Mérida', description: 'Veintiuna habitaciones, dos albercas y un espacio para trabajar a otro ritmo.', image: 'https://img1.wsimg.com/isteam/ip/33351b08-7efe-48ac-882f-66f26701bf10/Copia%20de%20CA%2062_junio-91.jpg/:/rs=w:1200,h:1500,cg:true,m/cr=w:1200,h:1500,a:cc', link: 'https://casaamate62.com/' },
+  { name: 'Hotel Onira', location: 'Av. Cúpules · Mérida', description: 'Dieciséis habitaciones donde los sueños y la realidad se encuentran en una estancia íntima.', logo: 'https://onira.mx/assets/onira-logo.png', link: 'https://onira.mx/' },
+];
+---
+
+<!doctype html>
+<html lang="es-MX">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Una colección de hoteles con historia en Mérida, Yucatán." />
+    <title>Alfa Hoteles | Cada hotel, una historia distinta</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <main>
+      <section class="hero" id="inicio">
+        <nav class="nav wrap" aria-label="Navegación principal">
+          <a class="brand" href="#inicio" aria-label="Alfa Hoteles, inicio"><img src="/images/alfa-hoteles-logo.png" alt="Alfa Hoteles" /></a>
+          <div class="nav-links"><a href="#coleccion">Hoteles</a><a href="#contacto">Contacto</a></div>
+          <a class="button button-dark nav-cta" href="https://wa.me/529993700408" target="_blank" rel="noreferrer">Reservar <span>↗</span></a>
+        </nav>
+        <div class="hero-content wrap">
+          <h1>Quédate donde<br /><em>la historia vive.</em></h1>
+          <p class="hero-copy">Una colección de hoteles para descubrir Mérida desde lugares con alma propia.</p>
+          <a class="text-link explore-link" href="#coleccion">Explorar la colección <span>↓</span></a>
+        </div>
+        <p class="hero-note">Mérida, Yucatán</p>
+      </section>
+
+      <section class="intro wrap" aria-labelledby="intro-title">
+        <div class="intro-mark"><img src="/images/alfa-hoteles-logo.png" alt="Logotipo de Alfa Hoteles" /><span>Desde Mérida<br />con intención</span></div>
+        <div><p class="eyebrow">Alfa Hoteles</p><h2 id="intro-title">Cada hotel, una historia distinta.<br /><em>Cada estancia, una experiencia única.</em></h2><p>Casas restauradas, arquitectura con carácter y una forma más cercana de vivir cada destino. Alfa reúne espacios que invitan a quedarte un poco más.</p></div>
+      </section>
+
+      <section class="latest wrap" aria-labelledby="latest-title">
+        <div class="latest-copy"><p class="eyebrow">Lo más nuevo</p><h2 id="latest-title">La conversación<br /><em>sobre hospedar.</em></h2><p>Cristina Salazar, fundadora de Alfa Hoteles, comparte su visión sobre estrategia, tecnología y turismo en Mérida.</p><a class="text-link latest-link" href="https://www.youtube.com/watch?v=OVubIkvEyFU" target="_blank" rel="noreferrer">Ver en YouTube <span>↗</span></a></div>
+        <div class="video-frame"><iframe src="https://www.youtube-nocookie.com/embed/OVubIkvEyFU?rel=0" title="Cómo aumentar los ingresos de un hotel: estrategia, tecnología y turismo en Mérida" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div>
+      </section>
+
+      <section class="collection" id="coleccion" aria-labelledby="collection-title">
+        <div class="section-heading wrap"><div><p class="eyebrow">Conoce nuestros hoteles</p><h2 id="collection-title">La colección</h2></div><p>Cinco hoteles en Mérida.<br />Una forma de hospedar.</p></div>
+        <div class="hotel-grid wrap">
+          {hotels.map((hotel, index) => (
+            <article class="hotel-card">
+              {hotel.image ? <img src={hotel.image} alt={`Hotel ${hotel.name}`} loading={index > 1 ? 'lazy' : 'eager'} /> : <div class="onira-visual"><img src={hotel.logo} alt="Hotel Onira" loading="lazy" /></div>}
+              <div class="hotel-overlay"></div>
+              <div class="hotel-content"><p>{hotel.location}</p><h3>{hotel.name}</h3><div class="hotel-details"><p>{hotel.description}</p><a href={hotel.link} target="_blank" rel="noreferrer">Conocer hotel <span>↗</span></a></div></div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section class="social-band" aria-labelledby="social-title"><div class="wrap social-inner"><div><h2 id="social-title">Encuéntranos</h2></div><div class="social-large"><a href="https://www.instagram.com/alfahoteles/" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.45"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.45"/><circle cx="17.5" cy="6.8" r="1.1" fill="currentColor"/></svg><span>Instagram</span><small>@alfahoteles</small></a><a href="https://www.facebook.com/106989344495684" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.2H8v3.1h2.6v8h3.1Z" fill="currentColor"/></svg><span>Facebook</span><small>Alfa Hoteles</small></a><a href="https://www.youtube.com/@AlfaHoteles" target="_blank" rel="noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.1a2.8 2.8 0 0 0-2-2C17.9 4.6 12 4.6s-5.9 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.9 2.8 2.8 0 0 0 2 2c1.7.5 7.6.5 7.6.5s5.9 0 7.6-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.9ZM10.1 15.1V8.9l5.3 3.1-5.3 3.1Z" fill="currentColor"/></svg><span>YouTube</span><small>@AlfaHoteles</small></a></div></div></section>
+
+      <section class="contact" id="contacto"><div class="wrap contact-inner"><h2>¿Planeas una escapada,<br /><em>evento o celebración?</em></h2><p>Escríbenos para cotizar hospedaje, bodas, grupos, convenios y eventos.</p><a class="button button-light whatsapp-button" href="https://wa.me/529993700408" target="_blank" rel="noreferrer"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M16 3.2a12.7 12.7 0 0 0-10.9 19.3L3.2 29l6.7-1.8A12.8 12.8 0 1 0 16 3.2Zm0 23.2c-2 0-3.8-.5-5.4-1.5l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.4Zm5.8-7.9c-.3-.2-2-1-2.3-1.1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-1.8-.9-3-2.6-3.4-3.2-.2-.3 0-.5.1-.6l.5-.6c.2-.2.2-.4.3-.6 0-.2 0-.4-.1-.6l-1.1-2.6c-.3-.7-.6-.6-.8-.6h-.7c-.3 0-.6.1-.9.4-.3.3-1.1 1.1-1.1 2.7s1.2 3.1 1.4 3.3c.2.2 2.4 3.7 5.9 5.1.8.4 1.5.6 2 .7.8.2 1.6.2 2.2.1.7-.1 2- .8 2.3-1.6.3-.8.3-1.5.2-1.6-.1-.1-.3-.2-.6-.3Z" fill="currentColor" /></svg>Enviar mensaje por WhatsApp <span>↗</span></a></div></section>
+    </main>
+    <footer class="footer wrap"><a class="brand footer-brand" href="#inicio" aria-label="Alfa Hoteles, inicio"><img src="/images/alfa-hoteles-logo.png" alt="Alfa Hoteles" /></a><p>© {new Date().getFullYear()} Alfa Hoteles</p><div class="social-links"><a href="https://www.instagram.com/alfahoteles/" target="_blank" rel="noreferrer" aria-label="Instagram de Alfa Hoteles"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="12" cy="12" r="4.1" fill="none" stroke="currentColor" stroke-width="1.7"/><circle cx="17.5" cy="6.8" r="1.1" fill="currentColor"/></svg></a><a href="https://www.facebook.com/106989344495684" target="_blank" rel="noreferrer" aria-label="Facebook de Alfa Hoteles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.7 21v-8h2.7l.4-3.1h-3.1V8c0-.9.3-1.5 1.6-1.5h1.7V3.7c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.1v2.2H8v3.1h2.6v8h3.1Z" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@AlfaHoteles" target="_blank" rel="noreferrer" aria-label="YouTube de Alfa Hoteles"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.1a2.8 2.8 0 0 0-2-2C17.9 4.6 12 4.6 12 4.6s-5.9 0-7.6.5a2.8 2.8 0 0 0-2 2A29 29 0 0 0 2 12a29 29 0 0 0 .4 4.9 2.8 2.8 0 0 0 2 2c1.7.5 7.6.5 7.6.5s5.9 0 7.6-.5a2.8 2.8 0 0 0 2-2A29 29 0 0 0 22 12a29 29 0 0 0-.4-4.9ZM10.1 15.1V8.9l5.3 3.1-5.3 3.1Z" fill="currentColor"/></svg></a></div></footer>
+    <script>
+      const nav = document.querySelector('.nav');
+      const setNavigationState = () => nav?.classList.toggle('is-scrolled', window.scrollY > 32);
+      setNavigationState();
+      window.addEventListener('scroll', setNavigationState, { passive: true });
+    </script>
+  </body>
+</html>
