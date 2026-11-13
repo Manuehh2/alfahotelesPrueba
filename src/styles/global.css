@@ -64,6 +64,42 @@ h1 { max-width: 760px; margin-bottom: 26px; font-size: clamp(50px, 7vw, 96px); f
 .hotel-details p { max-width: 340px; margin-bottom: 16px; font-size: 13px; line-height: 1.45; }
 .hotel-details a { display: inline-flex; gap: 10px; padding-bottom: 4px; border-bottom: 1px solid rgba(255,250,240,.7); font-size: 12px; }
 
+.journal { padding-block: 115px 125px; background: #f5f2e9; }
+.journal-heading { display: flex; align-items: end; justify-content: space-between; gap: 30px; margin-bottom: 42px; }
+.journal-heading h2 { margin: 0; font-size: clamp(42px, 5vw, 68px); letter-spacing: -.06em; line-height: 1; }
+.journal-heading .text-link { flex: none; margin-bottom: 7px; }
+.post-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.post-card { min-width: 0; }
+.post-image { display: block; aspect-ratio: 1.45; overflow: hidden; background: #ded8c9; }
+.post-image img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform .45s ease; }
+.post-card:hover .post-image img { transform: scale(1.035); }
+.post-meta { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 15px; margin: 22px 0 12px; color: #777366; font: 500 10px/1.4 'DM Mono', monospace; letter-spacing: .05em; text-transform: uppercase; }
+.post-card h3 { margin-bottom: 12px; font: 500 clamp(23px, 2.1vw, 31px)/1.14 'Playfair Display', Georgia, serif; letter-spacing: -.025em; }
+.post-card h3 a:hover, .post-read:hover { text-decoration: underline; text-underline-offset: 4px; }
+.post-card > p { margin-bottom: 22px; color: #5d5a4d; font-size: 14px; line-height: 1.6; }
+.post-read { display: inline-flex; gap: 12px; align-items: center; padding-bottom: 5px; border-bottom: 1px solid #8c8878; font-size: 12px; font-weight: 600; }
+.blog-header { color: #f7f2e6; background: #262920; }
+.blog-nav { display: flex; align-items: center; justify-content: space-between; min-height: 104px; gap: 28px; }
+.blog-nav-links { display: flex; align-items: center; gap: 32px; margin-left: auto; font-size: 14px; }
+.blog-nav .brand img { filter: invert(1) brightness(2.4) grayscale(1); }
+.blog-intro { padding-block: 105px 75px; border-bottom: 1px solid #cbc5b8; }
+.blog-intro h1 { max-width: none; margin-bottom: 24px; font-size: clamp(53px, 7vw, 92px); }
+.blog-intro > p:last-child { max-width: 540px; margin: 0; color: #5d5a4d; font-size: 16px; line-height: 1.65; }
+.blog-list { padding-block: 58px 125px; }
+.blog-list .post-grid { row-gap: 65px; }
+.article-heading { max-width: 860px; padding-block: 85px 65px; }
+.article-heading .post-meta { justify-content: start; gap: 24px; margin: 48px 0 20px; }
+.article-heading h1 { max-width: 900px; margin-bottom: 25px; font-size: clamp(46px, 6.2vw, 82px); }
+.article-heading > p { max-width: 650px; margin: 0; color: #5d5a4d; font-size: 18px; line-height: 1.6; }
+.article-cover { display: block; width: min(100% - 48px, 1240px); max-height: 590px; margin-inline: auto; object-fit: cover; }
+.article-body { max-width: 760px; padding-block: 70px; color: #3d3b33; font-size: 17px; line-height: 1.85; }
+.article-body h2 { margin: 1.8em 0 .6em; color: #1b1b18; font-size: clamp(28px, 3vw, 41px); letter-spacing: -.04em; line-height: 1.18; }
+.article-body h3 { margin: 1.6em 0 .6em; color: #1b1b18; font-size: 25px; }
+.article-body p, .article-body ul, .article-body ol { margin-bottom: 1.35em; }
+.article-body a { text-decoration: underline; text-underline-offset: 3px; }
+.article-body img { max-width: 100%; height: auto; }
+.article-body figure { margin: 2.5em 0; }
+.article-end { max-width: 760px; padding-bottom: 100px; }
 .social-band { padding-block: 110px; color: #f5f0e5; background: #262920; }
 .social-inner { display: grid; grid-template-columns: .85fr 1.5fr; gap: 80px; align-items: end; }
 .social-band .eyebrow { color: #c5c3a7; }
@@ -111,6 +147,17 @@ h1 { max-width: 760px; margin-bottom: 26px; font-size: clamp(50px, 7vw, 96px); f
   .hotel-grid { grid-template-columns: 1fr; }
   .hotel-card { min-height: 450px; }
   .hotel-details { max-height: 150px; opacity: 1; }
+  .journal { padding-block: 80px 90px; }
+  .journal-heading { display: block; margin-bottom: 34px; }
+  .journal-heading .text-link { margin-top: 24px; }
+  .post-grid { grid-template-columns: 1fr; gap: 45px; }
+  .blog-nav { min-height: 80px; }
+  .blog-nav-links { display: none; }
+  .blog-intro { padding-block: 75px 55px; }
+  .blog-list { padding-block: 50px 85px; }
+  .article-heading { padding-block: 65px 45px; }
+  .article-cover { width: calc(100% - 32px); }
+  .article-body { padding-block: 50px; font-size: 16px; }
   .social-band { padding-block: 78px; }
   .social-inner { grid-template-columns: 1fr; gap: 38px; }
   .social-large { grid-template-columns: 1fr; }

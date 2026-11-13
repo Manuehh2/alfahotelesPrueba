@@ -1,0 +1,16 @@
+---
+import { formatPostDate } from '../data/posts';
+import type { BlogPost } from '../lib/blog';
+
+const { post } = Astro.props as { post: BlogPost };
+---
+
+<article class="post-card">
+  <a class="post-image" href={post.url} target={post.slug ? undefined : '_blank'} rel={post.slug ? undefined : 'noopener noreferrer'} aria-label={`Leer ${post.title}`}>
+    {post.image && <img src={post.image} alt="" loading="lazy" />}
+  </a>
+  <div class="post-meta"><span>{post.category}</span><time datetime={post.date}>{formatPostDate(post.date)}</time></div>
+  <h3><a href={post.url} target={post.slug ? undefined : '_blank'} rel={post.slug ? undefined : 'noopener noreferrer'}>{post.title}</a></h3>
+  <p>{post.excerpt}</p>
+  <a class="post-read" href={post.url} target={post.slug ? undefined : '_blank'} rel={post.slug ? undefined : 'noopener noreferrer'}>Leer artículo <span aria-hidden="true">↗</span></a>
+</article>

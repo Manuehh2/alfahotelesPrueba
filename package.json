@@ -12,6 +12,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@portabletext/to-html": "^6.0.0",
     "astro": "^7.4.10"
   }
 }

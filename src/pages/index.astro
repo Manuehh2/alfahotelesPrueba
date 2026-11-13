@@ -1,7 +1,10 @@
 ---
 import '../styles/global.css';
+import PostCard from '../components/PostCard.astro';
+import { getPosts } from '../lib/blog';
 
 const base = import.meta.env.BASE_URL;
+const posts = await getPosts();
 
 const hotels = [
   { name: 'Casa Loreto 1893', location: 'Barrio de Santiago · Mérida', description: 'Una casa de 1893 restaurada para vivir Mérida desde el centro de su memoria.', image: 'https://img1.wsimg.com/isteam/ip/33351b08-7efe-48ac-882f-66f26701bf10/CasaLoreto-3.jpg/:/rs=w:1200,h:1500,cg:true,m/cr=w:1200,h:1500,a:cc', link: 'https://casaloreto1893.com/' },
@@ -28,7 +31,7 @@ const hotels = [
       <section class="hero" id="inicio">
         <nav class="nav wrap" aria-label="Navegación principal">
           <a class="brand" href="#inicio" aria-label="Alfa Hoteles, inicio"><img src={`${base}/images/alfa-hoteles-logo.png`} alt="Alfa Hoteles" /></a>
-          <div class="nav-links"><a href="#coleccion">Hoteles</a><a href="#contacto">Contacto</a></div>
+          <div class="nav-links"><a href="#coleccion">Hoteles</a><a href={`${base}/blog/`}>Blog</a><a href="#contacto">Contacto</a></div>
           <a class="button button-dark nav-cta" href="https://wa.me/529993700408" target="_blank" rel="noreferrer">Reservar <span>↗</span></a>
         </nav>
         <div class="hero-content wrap">
@@ -59,6 +62,13 @@ const hotels = [
               <div class="hotel-content"><p>{hotel.location}</p><h3>{hotel.name}</h3><div class="hotel-details"><p>{hotel.description}</p><a href={hotel.link} target="_blank" rel="noreferrer">Conocer hotel <span>↗</span></a></div></div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section class="journal" id="blog" aria-labelledby="journal-title">
+        <div class="wrap">
+          <div class="journal-heading"><div><p class="eyebrow">Historias y guías de viaje</p><h2 id="journal-title">El blog de <em>Alfa.</em></h2></div><a class="text-link" href={`${base}/blog/`}>Ver todos los artículos <span aria-hidden="true">↗</span></a></div>
+          <div class="post-grid">{posts.slice(0, 3).map((post) => <PostCard post={post} />)}</div>
         </div>
       </section>
 
